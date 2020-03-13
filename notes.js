@@ -38,8 +38,17 @@ const removeNote = (title) => {
     }
     else{
         console.log(chalk.red.inverse('No note found!'))
-    }
+    }   
+}
+
+
+const listNotes= () =>{
+    console.log(chalk.inverse('Your notes'))
+    const notes=loadNotes()
     
+    notes.forEach((note)=>{
+        console.log(note.title)
+    })
 }
 
 
