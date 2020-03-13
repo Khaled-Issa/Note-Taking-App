@@ -7,13 +7,13 @@ const getNotes= () =>{
 
 const addNote = (title,body)=>{
     const notes=loadNotes()
-    const duplicateNotes = notes.filter((note) => note.title===title)
-
+    //const duplicateNotes = notes.filter((note) => note.title===title)
+    const duplicateNote = notes.find((note)=> notes.title===title)
     // const duplicateNotes = notes.filter(function(note){
     //     return note.title === title
     // })
 
-    if(duplicateNotes.length===0){
+    if(!duplicateNotes){
         notes.push({
             title: title,
             body: body
@@ -50,6 +50,8 @@ const listNotes= () =>{
         console.log(note.title)
     })
 }
+
+
 
 
 const saveNotes =  (notes) => {
